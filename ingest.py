@@ -1,12 +1,13 @@
 from os import path
 
-if not path.exists('data'):
+if not path.exists('./data'):
   import subprocess
-  subprocess.run(['fetch-data.sh'])
+  subprocess.run(['./fetch-data.sh'])
 
 import json
 
 from haystack.nodes import PreProcessor
+from haystack.document_stores import OpenSearchDocumentStore
 from os import listdir
 from os.path import isfile, join
 
@@ -50,7 +51,10 @@ def index_docs(docs):
         'password': "admin",
       }
     )
-    docstore.write_documents(docs, index="docbot")
+    try: 
+      docstore.write_documents(docs, index="docbot")
+    except:
+        pass
 
 
 def ingest_docs(split_length=200, split_overlap=20, basepath="data"):
