@@ -269,9 +269,12 @@ POST _bulk
 { "content": "This should exist"}
 ```
 
+> Note this may take some time as it is downloading the entire OpenSearch project website and documentation website. 
+
 ```
+chmod +x ./fetch-data.sh
 python -m pip install -r requirements.txt
-python ingestion.py
+python ingest.py
 ```
 
 This will break all the documents from OpenSearch's documentation and website into smaller chunks (150 words) that makes it better for retrieving and providing as context. The details of this script are out of scope for this already long demo 😅
