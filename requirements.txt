@@ -1,1 +1,1 @@
-farm-haystack[opensearch,crawler,preprocessing]
+farm-haystack[opensearch,preprocessing]
