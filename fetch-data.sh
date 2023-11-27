@@ -1,3 +1,4 @@
+#!/bin/bash
 git clone https://github.com/opensearch-project/project-website.git --depth=1
 git clone https://github.com/opensearch-project/documentation-website.git --depth=1
 
